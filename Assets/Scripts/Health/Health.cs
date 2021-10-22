@@ -9,9 +9,6 @@ public class Health : MonoBehaviour
 
     bool dead = false;
 
-    public UnityAction OnDamage;
-    public UnityAction OnDeath;
-
     private void Start()
     {
         CurrentHealth = MaxHealth;
@@ -24,15 +21,11 @@ public class Health : MonoBehaviour
             return;
 
         CurrentHealth -= damage;
-        if (OnDamage != null)
-            OnDamage.Invoke();
 
         if (CurrentHealth <= 0)
         {
             dead = true;
             CurrentHealth = 0;
-            if (OnDeath != null)
-                OnDeath.Invoke();
         }
     }
 
@@ -102,6 +95,7 @@ public class Health : MonoBehaviour
 
 
 /*
-    UnityAction OnDeath;
+    public UnityAction OnDamage;
+    public UnityAction OnDeath;
 
  */

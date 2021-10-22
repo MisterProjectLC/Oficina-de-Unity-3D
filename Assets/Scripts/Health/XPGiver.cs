@@ -6,7 +6,7 @@ public class XPGiver : MonoBehaviour
 {
     private void Start()
     {
-        GetComponent<Health>().OnDeath += GiveXP;
+        //GetComponent<Health>().OnDeath += GiveXP;
     }
 
     void GiveXP()
